@@ -37,7 +37,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 border-t rounded-b-lg shadow-sm">
+    <form onSubmit={handleSubmit} className="p-3 border-t border-gray-100 bg-white/80 backdrop-blur-sm">
       <div className="relative flex items-center">
         <textarea
           ref={textareaRef}
@@ -46,22 +46,23 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
           onKeyDown={handleKeyDown}
           placeholder="Ask a question..."
           rows={1}
-          className="flex-1 resize-none bg-muted/30 border border-input rounded-full py-3 px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="flex-1 resize-none bg-muted/30 border border-gray-200 rounded-full py-2.5 px-4 pr-12 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all shadow-sm"
           disabled={isLoading}
         />
         <button
           type="submit"
           disabled={!message.trim() || isLoading}
-          className={`absolute right-2 rounded-full p-2 text-white transition-colors ${
+          className={`absolute right-1.5 rounded-full p-1.5 text-white transition-colors ${
             message.trim() && !isLoading
               ? "bg-primary hover:bg-primary/90"
               : "bg-gray-300 cursor-not-allowed"
           }`}
+          aria-label="Send message"
         >
-          <Send size={18} />
+          <Send size={16} />
         </button>
       </div>
-      <div className="text-xs text-gray-500 mt-2 ml-2">
+      <div className="text-xs text-gray-400 mt-1.5 ml-2">
         Press Cmd/Ctrl + Enter to send
       </div>
     </form>

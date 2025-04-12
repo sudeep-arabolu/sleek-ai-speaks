@@ -99,7 +99,7 @@
   }
 
   .chat-messages {
-    @apply flex-1 overflow-y-auto p-4 space-y-4;
+    @apply flex-1 overflow-y-auto px-1 space-y-1;
   }
 
   .dots-typing {
@@ -107,7 +107,7 @@
   }
 
   .dots-typing span {
-    @apply w-2 h-2 rounded-full bg-white inline-block;
+    @apply w-1.5 h-1.5 rounded-full bg-white inline-block;
   }
 
   .dots-typing span:nth-child(1) {
@@ -121,4 +121,10 @@
   .dots-typing span:nth-child(3) {
     animation: pulse-dots 1.5s infinite 0.4s;
   }
+}
+
+@keyframes pulse-dots {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  20% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.2; transform: scale(0.8); }
 }
