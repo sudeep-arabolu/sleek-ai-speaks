@@ -4,14 +4,7 @@ import { Message } from "../components/MessageBubble";
 import { v4 as uuidv4 } from "uuid";
 
 export const useChat = () => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "welcome",
-      text: "Hello! I'm your AI assistant. How can I help you today?",
-      sender: "ai",
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   // Simulate AI response delay (normally this would be an API call)
